@@ -36,6 +36,7 @@ public class ResultActivity extends AppCompatActivity {
     public void returnToHome(View view){
         Intent intent = new Intent(ResultActivity.this, MainActivity.class);
         startActivity(intent);
+        finish();
     }//end of return home
 
 }//end of activity

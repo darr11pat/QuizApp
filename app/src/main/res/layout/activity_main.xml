@@ -11,31 +11,22 @@
     tools:context="edu.niu.cs.z1779946.quiz240.MainActivity">
 
     <Button
+        style="@style/button_style"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="150dp"
         android:text="Start Quiz"
-        style="@style/button_style"
         android:id="@+id/quizBeginBT"
         android:onClick="startQuiz"/>
 
     <Button
+        style="@style/button_style"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="250dp"
         android:text="Add Question"
-        style="@style/button_style"
         android:onClick="addQuestion"/>
-
-    <Button
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="300dp"
-        android:text="Exit"
-        style="@style/button_style"
-        android:onClick="exitApp"/>
 
 </RelativeLayout>

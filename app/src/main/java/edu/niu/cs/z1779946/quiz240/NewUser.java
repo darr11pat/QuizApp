@@ -1,4 +1,4 @@
-package edu.niu.cs.z1779946.quizapp;
+package edu.niu.cs.z1779946.quiz240;
 
 /**
  * Created by DARSHAN on 4/23/2017.

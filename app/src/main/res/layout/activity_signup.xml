@@ -10,11 +10,10 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:padding="20dp"
     android:background="@color/NIU_RED"
-    tools:context="edu.niu.cs.z1779946.quizapp.SignupActivity">
+    tools:context="edu.niu.cs.z1779946.quiz240.SignupActivity">
 
     <TextView
-        style="@style/textView_style"
-        android:padding="10dp"
+        style="@style/textView_style0"
         android:text="@string/signUp"
         android:textColor="@color/white_greyish"
         android:textSize="25sp"
@@ -22,8 +21,7 @@
 
     <EditText
         android:id="@+id/fullName"
-        style="@style/editText_Signup_style"
-        android:layout_marginTop="10dp"
+        style="@style/editText_Signup_style0"
         android:drawableLeft="@drawable/user"
         android:hint="@string/fullName"
         android:inputType="textCapWords" />
@@ -35,7 +33,7 @@
 
     <EditText
         android:id="@+id/userEmailId"
-        style="@style/editText_Signup_style"
+        style="@style/editText_Signup_style0"
         android:drawableLeft="@drawable/email"
         android:hint="@string/email"
         android:inputType="textEmailAddress" />
@@ -47,7 +45,7 @@
 
     <EditText
         android:id="@+id/userName"
-        style="@style/editText_Signup_style"
+        style="@style/editText_Signup_style0"
         android:drawableLeft="@drawable/user"
         android:hint="@string/UserName"
         android:inputType="textCapWords" />
@@ -57,10 +55,9 @@
         android:layout_height="1px"
         android:background="@color/white_greyish" />
 
-
     <EditText
         android:id="@+id/password"
-        style="@style/editText_Signup_style"
+        style="@style/editText_Signup_style0"
         android:drawableLeft="@drawable/password"
         android:drawablePadding="8dp"
         android:hint="@string/passowrd"
@@ -73,34 +70,37 @@
 
     <EditText
         android:id="@+id/confirmPassword"
-        style="@style/editText_Signup_style"
+        style="@style/editText_Signup_style0"
         android:drawableLeft="@drawable/confirm_password"
         android:hint="@string/confirmPassword"
         android:inputType="textPassword" />
 
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:background="@color/white_greyish" />
+
     <CheckBox
         android:id="@+id/terms_conditions"
-        style="@style/textView_style"
+        style="@style/textView_style0"
         android:layout_marginTop="7dp"
         android:text="@string/terms_conditions"
-        android:textColor="@color/white"
+        android:textColor="@color/button_selectorcolor"
         android:textSize="12sp" />
 
     <Button
         android:onClick="signUpBtn"
         android:id="@+id/signUpBtn"
-        style="@style/button_style"
+        style="@style/button_style0"
         android:text="@string/signUp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/already_user"
-        style="@style/textView_style"
-        android:layout_marginTop="5dp"
+        style="@style/textView_style0"
         android:padding="10dp"
         android:text="@string/already_user"
-        android:textColor="@color/white_greyish"
-        android:textSize="15sp"
+        android:textColor="@color/white"
         android:onClick="login"/>
 
 </LinearLayout>

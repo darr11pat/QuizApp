@@ -1,5 +1,6 @@
 package edu.niu.cs.z1779946.quiz240;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +8,8 @@ import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -15,6 +18,7 @@ public class StartActivity extends AppCompatActivity {
     private DatabaseManager databaseManager;
 
     private ArrayList<Question> questions;
+
     private int questionsCount, currentQuestionIndex = -1, correctAnswers = 0;
     private Question nextQuestion, currentQuestion;
 
@@ -46,6 +50,8 @@ public class StartActivity extends AppCompatActivity {
 
         if(questionsCount > 0) {
             updateView();
+        } else {
+            Toast.makeText(StartActivity.this, " No questions left, Select another Quiz ", Toast.LENGTH_SHORT).show();
         }
     }//end onCreate
 
@@ -62,6 +68,7 @@ public class StartActivity extends AppCompatActivity {
 
             intent.putExtras(extras);
             startActivity(intent);
+            finish();
         }
 
         currentQuestion = questions.get(currentQuestionIndex);
@@ -102,21 +109,25 @@ public class StartActivity extends AppCompatActivity {
 
             option1RB.setText(choices[0]);
             option2RB.setText(choices[1]);
-            option1RB.setText(choices[2]);
+            option3RB.setText(choices[2]);
         }//end of if-else
 
     }//end of update view
 
     public void nextQuestionButton(View view){
-        String answer = ((RadioButton)findViewById(optionsRG.getCheckedRadioButtonId())).getText().toString();
 
-        if(answer.equals(currentQuestion.getAnswer())) {
-            correctAnswers++;
+        if (optionsRG.getCheckedRadioButtonId() == -1){
+            Toast.makeText(StartActivity.this, "Select an answer", Toast.LENGTH_SHORT).show();
+        } else {
+            String answer = ((RadioButton)findViewById(optionsRG.getCheckedRadioButtonId())).getText().toString();
+
+            if (answer.equals(currentQuestion.getAnswer())) {
+                correctAnswers++;
+                optionsRG.clearCheck();
+                updateView();
+            }
         }
 
-        optionsRG.clearCheck();
-
-        updateView();
     }//end of nextQuestion button click
 
 }//end of main activity
