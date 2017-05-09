@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="50dp"
+    android:paddingLeft="48dp"
+    android:paddingRight="48dp"
+    android:paddingTop="50dp"
+    android:background="@color/NIU_RED"
+    tools:context="edu.niu.cs.z1779946.quizapp.LoginActivity">
+
+    <!-- Login progress -->
+    <ProgressBar
+        android:id="@+id/login_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:srcCompat="@drawable/niu2"
+            android:id="@+id/imageView"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:text="CSCI 240"
+            android:textSize="20dp"
+            style="@style/textView_style"
+            android:id="@+id/textView" />
+
+        <EditText
+            style="@style/editText_style"
+            android:inputType="textPersonName"
+            android:hint="Username"
+            android:id="@+id/usernameEditText" />
+
+        <EditText
+            style="@style/editText_style"
+            android:inputType="textPassword"
+            android:hint="Password"
+            android:imeActionId="@+id/login"
+            android:imeActionLabel="@string/action_sign_in_short"
+            android:imeOptions="actionUnspecified"
+            android:id="@+id/passwordEditText" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/show_hide_password"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                style="@style/textView_style"
+                android:text="Show Password" />
+
+            <TextView
+                android:id="@+id/forgot_password"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:padding="5dp"
+                style="@style/textView_style"
+                android:text="Forgot Password" />
+        </LinearLayout>
+
+        <Button
+            android:text="LOGIN"
+            style="@style/button_style"
+            android:id="@+id/logInButton"
+            android:onClick="logIn"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:text="New User? Sign Up here."
+            android:layout_margin="3dp"
+            android:layout_marginTop="15dp"
+            style="@style/textView_style"
+            android:id="@+id/newUserTextView"
+            android:onClick="signIn"/>
+    </LinearLayout>
+
+</RelativeLayout>
